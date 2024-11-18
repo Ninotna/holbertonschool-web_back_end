@@ -1,10 +1,10 @@
 export default function createIteratorObject(report) {
   // Extract all employees from the report object
-  let allEmployees = report.allEmployees;
+  const { allEmployees } = report;
   let employeesList = [];
 
   // Iterate through each department and concatenate the employee lists
-  for (let department in allEmployees) {
+  for (const department in allEmployees) {
     if (allEmployees.hasOwnProperty(department)) {
       employeesList = employeesList.concat(allEmployees[department]);
     }
