@@ -16,7 +16,7 @@ export default function updateUniqueItems(map) {
     });
   } else {
     // Throw an error if the input is not a Map
-    throw new Error("Cannot process");
+    throw new Error('Cannot process');
   }
 
   // Return the updated Map

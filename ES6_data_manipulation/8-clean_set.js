@@ -9,11 +9,11 @@
 export default function cleanSet(set, startString) {
   /* Validate input types and startString length */
   if (
-    typeof startString !== "string" ||
-    typeof set !== "object" ||
-    startString.length === 0
+    typeof startString !== 'string'
+    || typeof set !== 'object'
+    || startString.length === 0
   ) {
-    return "";
+    return '';
   }
 
   /* Initialize an array to hold matched elements */
@@ -29,5 +29,5 @@ export default function cleanSet(set, startString) {
   }
 
   /* Join array elements with a hyphen and return the result */
-  return str.join("-");
+  return str.join('-');
 }
