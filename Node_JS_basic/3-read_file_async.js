@@ -1,26 +1,26 @@
-const fs = require("fs");
+const fs = require('fs');
 
 function countStudents(filePath) {
   return new Promise((resolve, reject) => {
     // Read the file asynchronously
-    fs.readFile(filePath, "utf8", (err, data) => {
+    fs.readFile(filePath, 'utf8', (err, data) => {
       if (err) {
-        reject(new Error("Cannot load the database"));
+        reject(new Error('Cannot load the database'));
         return;
       }
 
       // Process the file content
-      const lines = data.split("\n").filter((line) => line.trim() !== "");
+      const lines = data.split('\n').filter((line) => line.trim() !== '');
 
       if (lines.length <= 1) {
-        console.log("Number of students: 0");
+        console.log('Number of students: 0');
         resolve();
         return;
       }
 
       // Parse the student data
       const students = lines.slice(1).map((line) => {
-        const [firstname, , , field] = line.split(","); // Ignore lastname and age
+        const [firstname, , , field] = line.split(','); // Ignore lastname and age
         return { firstname, field };
       });
 
@@ -40,8 +40,8 @@ function countStudents(filePath) {
       for (const [field, names] of Object.entries(fieldCount)) {
         console.log(
           `Number of students in ${field}: ${names.length}. List: ${names.join(
-            ", "
-          )}`
+            ', ',
+          )}`,
         );
       }
 
