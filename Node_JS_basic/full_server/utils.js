@@ -1,16 +1,16 @@
-const fs = require("fs").promises;
+const fs = require('fs').promises;
 
 async function readDatabase(filePath) {
   try {
-    const data = await fs.readFile(filePath, "utf-8");
+    const data = await fs.readFile(filePath, 'utf-8');
     const lines = data
       .trim()
-      .split("\n")
+      .split('\n')
       .slice(1); // Ignorer la première ligne
     const result = {};
 
     for (const line of lines) {
-      const [firstName, , , field] = line.split(","); // Extraire les valeurs des colonnes
+      const [firstName, , , field] = line.split(','); // Extraire les valeurs des colonnes
       if (!result[field]) {
         result[field] = [];
       }
